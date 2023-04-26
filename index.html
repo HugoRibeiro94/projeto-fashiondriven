@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="reset.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Fashion Driven</title>
+</head>
+<body>
+    <div class="header">
+        <img src="Logo.png"/>
+        <div class="usuario"></div>
+    </div>
+    <div class="container">
+        <div class="container-selecionar">
+
+            <div class="titulo">
+                <p>Escolha o modelo</p>
+            </div>
+
+            <div class="container-modelo">
+
+                <div class="tshirt" onclick="selecionarModelo('.tshirt')">
+                    <img class="imagem-modelo" src="tshirt.png" />
+                </div>
+
+                <div class="camiseta" onclick="selecionarModelo('.camiseta')">
+                    <img class="imagem-modelo" src="Camiseta.png" />
+                </div>
+
+                <div class="mangalonga" onclick="selecionarModelo('.mangalonga')">
+                    <img class="imagem-modelo" src="Mangalonga.png" />
+                </div>
+
+            </div>
+
+            <div class="container-titulo">
+                <p>T-shirt</p>
+                <p>Camiseta</p>
+                <p>Manga Longa</p>
+            </div>
+
+            <div class="titulo">
+                <p>Escolha a gola</p>
+            </div>
+
+            <div class="container-gola">
+
+                <div class="golav" onclick="selecionarGola('.golav')">
+                    <img class="imagem-gola" src="GolaV.png" />
+                </div>
+
+                <div class="golaredonda" onclick="selecionarGola('.golaredonda')">
+                    <img class="imagem-gola" src="GolaRedonda.png" />
+                </div>
+                
+                <div class="golapolo" onclick="selecionarGola('.golapolo')">
+                    <img class="imagem-gola" src="GolaPolo.png" />
+                </div>
+            
+            </div>
+
+            <div class="container-titulo">
+                <p>Gola V</p>
+                <p>Gola redonda</p>
+                <p>Gola Polo</p>
+            </div>
+
+            <div class="titulo">
+                <p>Escolha o tecido</p>
+            </div>
+
+            <div class="container-tecido">
+
+                <div class="seda" onclick="selecionarTecido('.seda')">
+                    <img class="imagem-tecido" src="Seda.png" />
+                </div>
+                
+                <div class="algodao" onclick="selecionarTecido('.algodao')">
+                    <img class="imagem-tecido" src="Algodão.png" />
+                </div>
+                
+                <div class="poliester" onclick="selecionarTecido('.poliester')">
+                    <img class="imagem-tecido" src="Poliester.png" />
+                </div>
+                
+            </div>
+
+            <div class="container-titulo">
+                <p>Seda</p>
+                <p>Algodão</p>
+                <p>Poliéster</p>
+            </div>
+            <div class="titulo">
+                <p>Imagem de referência</p>
+            </div>
+            <input type="url" placeholder="Insira o link" onchange="verificaSeleçao()">
+
+            <button disabled class = "confirmar-pedido" onclick = "verificaUrl()">
+                <div class = "confirmar">Confirmar Pedido</div>
+            </button>
+
+
+        </div>
+        <div class="ilustracao">
+            <img src="ilustração.png"/>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+.header{
+    width:1366px;
+    height: 89px;
+    background-color: #404EED;
+    display: flex;
+}
+.usuario{
+    width: 248px;
+    height: 39px;
+    background: #D9D9D9;
+    border-radius: 20px;
+    margin-top: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 1366px;
+    height: 785px;
+    display: flex;
+
+}
+.container-selecionar{
+    width: 695.51px;
+    height: 785px;
+    background-color: #E5E5E5;
+}
+.ilustracao{
+    width: 670.49px;
+    height: 785px;
+    background-color: #404EED;
+}
+p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #232323;
+}
+.titulo{
+    margin-top: 30px;
+    margin-left: 125px;
+    margin-bottom: 8px;
+}
+.container-modelo, .container-gola, .container-tecido{
+    height: 100px;
+    width: 400px;
+    margin-left: 125px;
+    display: flex;
+    justify-content: space-between;
+}
+.tshirt, .camiseta, .mangalonga, .golav, .golaredonda, .golapolo, .seda, .algodao, .poliester{
+    width: 100px;
+    height: 100px;
+    background: #F2F2F2;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagem-modelo{
+    width: 80px;
+    height:80px;
+}
+.imagem-gola{
+    width: 80px;
+    height:55px;
+}
+.imagem-tecido{
+    width: 60px;
+    height:60px;
+}
+.container-titulo{
+    width:400px;
+    display:flex;
+    justify-content:space-between;
+    margin-left: 150px;
+}
+.confirmar-pedido{
+    width: 398.61px;
+    height: 40px;
+    margin-left: 120px;
+    margin-top: 25px;
+    background: #C4C4C4;
+    border-radius: 10px;
+}
+.confirmar{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FCFCFC;
+}
+.selecionado{
+    border: 3px solid #404EED;
+}
+.fecharpedido{
+    background: #404EED;
+}
+input{
+    width: 396.27px;
+    height: 40px;
+    margin-left: 120px;
+    background: #F2F2F2;
+    border-radius: 10px;
+}
