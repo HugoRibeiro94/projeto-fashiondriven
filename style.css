@@ -56,7 +56,7 @@ p{
     display: flex;
     justify-content: space-between;
 }
-.tshirt, .camiseta, .mangalonga, .golav, .golaredonda, .golapolo, .seda, .algodao, .poliester{
+.t-shirt, .top-tank, .long, .v-neck, .round, .polo, .silk, .cotton, .polyester{
     width: 100px;
     height: 100px;
     background: #F2F2F2;
@@ -112,4 +112,43 @@ input{
     margin-left: 120px;
     background: #F2F2F2;
     border-radius: 10px;
+}
+.titulo-pedidos{
+    width: 174px;
+    height: 29.84px;
+    margin-left: 125px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #232323;
+}
+.ultimos-pedidos{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FCFCFC;
+    margin-left: 120px;
+    margin-top: 25px;
+    background: #C4C4C4;
+    border-radius: 10px;
+}
+.sucesso{
+    margin-left: 135px;
+    margin-top: 74px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    color: #232323;
+}
+.imagem-sucesso{
+    width: 435px;
+    height: 523px;
+    margin-left: 130px;
 }

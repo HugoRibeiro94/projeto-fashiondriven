@@ -26,15 +26,15 @@
 
             <div class="container-modelo">
 
-                <div class="tshirt" onclick="selecionarModelo('.tshirt')">
+                <div class="t-shirt" onclick="selecionarModelo('t-shirt')">
                     <img class="imagem-modelo" src="tshirt.png" />
                 </div>
 
-                <div class="camiseta" onclick="selecionarModelo('.camiseta')">
+                <div class="top-tank" onclick="selecionarModelo('top-tank')">
                     <img class="imagem-modelo" src="Camiseta.png" />
                 </div>
 
-                <div class="mangalonga" onclick="selecionarModelo('.mangalonga')">
+                <div class="long" onclick="selecionarModelo('long')">
                     <img class="imagem-modelo" src="Mangalonga.png" />
                 </div>
 
@@ -52,15 +52,15 @@
 
             <div class="container-gola">
 
-                <div class="golav" onclick="selecionarGola('.golav')">
+                <div class="v-neck" onclick="selecionarGola('v-neck')">
                     <img class="imagem-gola" src="GolaV.png" />
                 </div>
 
-                <div class="golaredonda" onclick="selecionarGola('.golaredonda')">
+                <div class="round" onclick="selecionarGola('round')">
                     <img class="imagem-gola" src="GolaRedonda.png" />
                 </div>
                 
-                <div class="golapolo" onclick="selecionarGola('.golapolo')">
+                <div class="polo" onclick="selecionarGola('polo')">
                     <img class="imagem-gola" src="GolaPolo.png" />
                 </div>
             
@@ -78,15 +78,15 @@
 
             <div class="container-tecido">
 
-                <div class="seda" onclick="selecionarTecido('.seda')">
+                <div class="silk" onclick="selecionarTecido('silk')">
                     <img class="imagem-tecido" src="Seda.png" />
                 </div>
                 
-                <div class="algodao" onclick="selecionarTecido('.algodao')">
+                <div class="cotton" onclick="selecionarTecido('cotton')">
                     <img class="imagem-tecido" src="Algodão.png" />
                 </div>
                 
-                <div class="poliester" onclick="selecionarTecido('.poliester')">
+                <div class="polyester" onclick="selecionarTecido('polyester')">
                     <img class="imagem-tecido" src="Poliester.png" />
                 </div>
                 
@@ -113,6 +113,34 @@
         </div>
     </div>
 
+    <div class = "container-rodape">
+
+        <div class = "titulo-pedidos">
+            Ultimos pedidos
+        </div>
+
+        <div class="filtros">
+            <button class = "ultimos-pedidos">
+                Todos os pedidos
+            </button>
+            <button class = "ultimos-pedidos">
+                T-shirt
+            </button>
+            <button class = "ultimos-pedidos">
+                Camiseta
+            </button>
+            <button class = "ultimos-pedidos">
+                Manga Longa
+            </button>
+        </div>
+
+        <div class="pedidos">
+            
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
