@@ -9,11 +9,6 @@ function nomeUsuario(){
 }
 nomeUsuario()
 
-/*function digita(){
-    const i = document.querySelector('input');
-    i.classList.add('selecionado');
-}*/
-
 let modeloEscolhido = '';
 let golaEscolhido = '';
 let tecidoEscolhido = '';
@@ -105,6 +100,10 @@ function enviarSelecao(){
     resposta.catch(erroEnviarPedido);
 }
 
+function atualizaPagina(){
+    window.location.reload();
+}
+
 function renderizarSucesso(){
     const sucesso = document.querySelector('.container-selecionar');
     sucesso.innerHTML = `
@@ -114,7 +113,7 @@ function renderizarSucesso(){
     <div>
         <img class="imagem-sucesso" src="${input.value}" />
     </div>`;
-    //setInterval(window.location.reload(),100000);
+    setTimeout(atualizaPagina,10000);
 }
 
 function erroEnviarPedido(erro){
@@ -128,7 +127,7 @@ function erroEnviarPedido(erro){
         <div>
             <img class="imagem-sucesso" src="image 1.png" />
         </div>`;
-        //setTimeout(window.location.reload(),10000);
+        setTimeout(atualizaPagina,10000);
     }
 }
 
@@ -151,30 +150,78 @@ function erroBuscarPedidos(erroBusca){
 let pedidos = [];
 
 function renderizarPedidos(){
+    const ultimoPedido = document.querySelector('.pedidos-enviados');
 
-    const ultimoPedido= document.querySelector('.pedidos');
-
-    for(let i = 0 ; i < pedidos.lenght ; i++){
+    for(let i = 0 ; i < pedidos.length ; i++){
 
         let pedido = pedidos[i];
 
         ultimoPedido.innerHTML += `
-            <div>
-                <img class="imagem-sucesso" src="${pedido.input}" />
-            </div>
-            <div>
-                Criador: ${pedido.owner}
-            </div>
+            <li onclick = "alertCompra()">
+                <div>
+                    <img class="imagem-pedidos" src="${pedido.image}" />
+                </div>
+                <div class="titulo-imagem-pedido">
+                    <strong>Criador:</strong> ${pedido.owner}
+                </div>
+            </li>
         `;
+            
     }
+
 }
 
 function pedidosRecebidos(res){
     console.log(res.data)
 
     pedidos = res.data;
-
+    
     renderizarPedidos()
 }
 
-//const ultimoPedido = document.querySelector('.pedidos ');
+
+function filtrarModelo(modelo){
+    
+    console.log(pedidos)
+    console.log(modelo)
+
+    const selecionado = pedidos.filter((ts)=> {
+        return ts.model === modelo;
+    });
+    console.log(selecionado);
+
+    renderizarSelecionado(selecionado)
+}
+
+function renderizarSelecionado(selecionado){
+
+    console.log(selecionado)
+    const ultimoPedido = document.querySelector('.pedidos-enviados');
+    ultimoPedido.innerHTML = '';
+
+        for(let i = 0 ; i < selecionado.length ; i++){
+
+            let pedido = selecionado[i];
+
+            ultimoPedido.innerHTML += `
+                <li onclick = "alertCompra()">
+                    <div>
+                        <img class="imagem-pedidos" src="${pedido.image}" />
+                    </div>
+                    <div class="titulo-imagem-pedido">
+                        <strong>Criador:</strong> ${pedido.owner}
+                    </div>
+                </li>
+            `;
+                console.log(pedido)
+        }
+        console.log(ultimoPedido)
+}
+
+function alertCompra(){
+    
+    const compra = confirm('Deseja comprar essa blusa?');
+    if(compra == true){
+     renderizarSucesso()
+    }
+}
