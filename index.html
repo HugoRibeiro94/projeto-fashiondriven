@@ -120,18 +120,21 @@
         </div>
 
         <div class="filtros">
-            <button class = "ultimos-pedidos"onclick="renderizarPedidos()">
-                Todos os pedidos
-            </button>
-            <button class = "ultimos-pedidos " onclick="filtrarModelo('t-shirt')">
+
+            <input class="ultimos-pedidos ftodos" type="button" value="Todos os pedidos" onclick="filtrarTodosModelos()"></input>
+
+            <button class="ultimos-pedidos ftshirt" onclick="filtrarModelo('t-shirt')">
                 T-shirt
             </button>
-            <button class = "ultimos-pedidos" onclick="filtrarModelo('top-tank')">
+
+            <button class = "ultimos-pedidos ftop" onclick="filtrarModelo('top-tank','ftop')">
                 Camiseta
             </button>
-            <button class = "ultimos-pedidos" onclick="filtrarModelo('long')">
+
+            <button class = "ultimos-pedidos flong" onclick="filtrarModelo('long','flong')">
                 Manga Longa
             </button>
+
         </div>
 
         <div class="pedidos">

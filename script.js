@@ -93,7 +93,6 @@ function enviarSelecao(){
         "owner": usuario,
         "author": usuario
     }
-    //console.log(selecao);
 
     const resposta = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts',selecao);
     resposta.then(renderizarSucesso);
@@ -113,11 +112,10 @@ function renderizarSucesso(){
     <div>
         <img class="imagem-sucesso" src="${input.value}" />
     </div>`;
-    setTimeout(atualizaPagina,10000);
+    //setTimeout(atualizaPagina,10000);
 }
 
 function erroEnviarPedido(erro){
-    console.log(erro)
     if ( erro.response.status === 422){
         const errado = document.querySelector('.container-selecionar');
         errado.innerHTML = `
@@ -127,7 +125,7 @@ function erroEnviarPedido(erro){
         <div>
             <img class="imagem-sucesso" src="image 1.png" />
         </div>`;
-        setTimeout(atualizaPagina,10000);
+        //setTimeout(atualizaPagina,10000);
     }
 }
 
@@ -157,7 +155,7 @@ function renderizarPedidos(){
         let pedido = pedidos[i];
 
         ultimoPedido.innerHTML += `
-            <li onclick = "alertCompra()">
+            <li class="lista" onclick = "alertCompra('${pedidos[i].model}','${pedidos[i].neck}','${pedidos[i].material}','${pedidos[i].image}','${pedidos[i].owner}','${pedidos[i].author}')">
                 <div>
                     <img class="imagem-pedidos" src="${pedido.image}" />
                 </div>
@@ -172,23 +170,24 @@ function renderizarPedidos(){
 }
 
 function pedidosRecebidos(res){
-    console.log(res.data)
 
     pedidos = res.data;
-    
+
+    console.log(pedidos)
+
     renderizarPedidos()
 }
 
+console.log(pedidos)
 
 function filtrarModelo(modelo){
     
-    console.log(pedidos)
-    console.log(modelo)
+    const botaoFechar = document.querySelector('.ultimos-pedidos');
+    botaoFechar.classList.add('fecharpedido');
 
     const selecionado = pedidos.filter((ts)=> {
         return ts.model === modelo;
     });
-    console.log(selecionado);
 
     renderizarSelecionado(selecionado)
 }
@@ -199,29 +198,96 @@ function renderizarSelecionado(selecionado){
     const ultimoPedido = document.querySelector('.pedidos-enviados');
     ultimoPedido.innerHTML = '';
 
-        for(let i = 0 ; i < selecionado.length ; i++){
+    for(let i = 0 ; i < selecionado.length ; i++){
 
-            let pedido = selecionado[i];
+        let pedido = selecionado[i];
 
-            ultimoPedido.innerHTML += `
-                <li onclick = "alertCompra()">
-                    <div>
-                        <img class="imagem-pedidos" src="${pedido.image}" />
-                    </div>
-                    <div class="titulo-imagem-pedido">
-                        <strong>Criador:</strong> ${pedido.owner}
-                    </div>
-                </li>
-            `;
-                console.log(pedido)
-        }
-        console.log(ultimoPedido)
-}
-
-function alertCompra(){
-    
-    const compra = confirm('Deseja comprar essa blusa?');
-    if(compra == true){
-     renderizarSucesso()
+        ultimoPedido.innerHTML += `
+            <li class="lista" onclick = "alertCompra()">
+                <div>
+                    <img class="imagem-pedidos" src="${pedido.image}" />
+                </div>
+                <div class="titulo-imagem-pedido">
+                    <strong>Criador:</strong> ${pedido.owner}
+                </div>
+            </li>
+        `;
     }
 }
+
+function alertCompra(model,neck,material,image,owner,author){
+
+    const compra = confirm('Deseja comprar essa blusa?');
+
+    if(compra == true){
+
+        /*const model = pedidos.data.model;
+        const neck = pedidos.data.neck;
+        const material = pedidos.data.model;
+        const image = pedidos.data.image;
+        const owner = pedidos.data.owner;*/
+
+        //console.log(pedidos[1])
+        //console.log(model)
+        //console.log(material)
+        //console.log(image) 
+        //console.log(owner)
+
+        console.log(pedidos)
+
+        //const objeto = pedidos[0];
+
+        const objeto = {
+            "model": model,
+            "neck": neck,
+            "material": material,
+            "image": image,
+            "owner": owner,
+            "author": owner
+        }
+
+        console.log(objeto)
+
+        const resposta = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts',objeto);
+        resposta.then(renderizarSucesso);
+        resposta.catch(erroEnviarPedido);
+    }
+}
+
+function filtrarTodosModelos(){
+
+    let botaoFechar = document.querySelector('.ultimos-pedidos .fecharpedido');
+    botaoFechar.classList.remove('.fecharpedido');
+    document.querySelector('.ftodos').classList.add('.fecharpedido');
+    
+
+    const categoria = pedidos.filter((ts)=> {
+        return  ts.model;
+    });
+
+    renderizarTodos(categoria)
+}
+
+function renderizarTodos(categoria){
+
+    console.log(categoria)
+    const ultimoPedido = document.querySelector('.pedidos-enviados');
+    ultimoPedido.innerHTML = '';
+
+    for(let i = 0 ; i < categoria.length ; i++){
+
+        let pedido = categoria[i];
+
+        ultimoPedido.innerHTML += `
+            <li onclick = "alertCompra()">
+                <div>
+                    <img class="imagem-pedidos" src="${pedido.image}" />
+                </div>
+                <div class="titulo-imagem-pedido">
+                    <strong>Criador:</strong> ${pedido.owner}
+                </div>
+            </li>
+        `;
+    }
+}
+

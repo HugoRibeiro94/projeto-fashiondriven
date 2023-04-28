@@ -3,6 +3,13 @@
     height: 89px;
     background-color: #404EED;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header img{
+    margin-left: 80px;
+    width: 339.23px;
+    height: 56.64px;
 }
 .usuario{
     width: 248px;
@@ -10,6 +17,7 @@
     background: #D9D9D9;
     border-radius: 20px;
     margin-top: 25px;
+    margin-right: 50px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -70,10 +78,12 @@ p{
     width: 80px;
     height:80px;
 }
+
 .imagem-gola{
     width: 80px;
     height:55px;
 }
+
 .imagem-tecido{
     width: 60px;
     height:60px;
@@ -84,6 +94,7 @@ p{
     justify-content:space-between;
     margin-left: 150px;
 }
+
 .confirmar-pedido{
     width: 398.61px;
     height: 40px;
@@ -100,12 +111,11 @@ p{
     line-height: 23px;
     color: #FCFCFC;
 }
+
 .selecionado{
     border: 3px solid #404EED;
 }
-.fecharpedido{
-    background: #404EED;
-}
+
 input{
     width: 396.27px;
     height: 40px;
@@ -113,6 +123,7 @@ input{
     background: #F2F2F2;
     border-radius: 10px;
 }
+
 .titulo-pedidos{
     width: 174px;
     height: 29.84px;
@@ -125,6 +136,7 @@ input{
     text-align: center;
     color: #232323;
 }
+
 .ultimos-pedidos{
     font-family: 'Roboto';
     font-style: normal;
@@ -137,6 +149,12 @@ input{
     background: #C4C4C4;
     border-radius: 10px;
 }
+
+.fecharpedido{
+    background: #404EED;
+    border-color: #404EED;
+}
+
 .sucesso{
     margin-left: 135px;
     margin-top: 74px;
@@ -152,6 +170,7 @@ input{
     height: 523px;
     margin-left: 130px;
 }
+
 .pedidos{
     height: 260px;
     width: 1100px;
@@ -161,17 +180,20 @@ input{
     justify-content: space-between;
     overflow: scroll;
 }
+
 .pedidos-enviados{
     height: 260px;
     width: 215px;
     display: flex;
     flex-direction: row;
-    
+    margin-right: 10px;
 }
+
 .imagem-pedidos{
     width: 192px;
     height: 195px;
 }
+
 .titulo-imagem-pedido{
     font-family: 'Roboto';
     font-style: normal;
@@ -180,6 +202,7 @@ input{
     line-height: 23px;
     color: #232323;
 }
+
 strong{
     font-weight: bold;
 }
