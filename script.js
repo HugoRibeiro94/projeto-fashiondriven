@@ -112,7 +112,7 @@ function renderizarSucesso(){
     <div>
         <img class="imagem-sucesso" src="${input.value}" />
     </div>`;
-    //setTimeout(atualizaPagina,10000);
+    setTimeout(atualizaPagina,10000);
 }
 
 function erroEnviarPedido(erro){
@@ -125,7 +125,7 @@ function erroEnviarPedido(erro){
         <div>
             <img class="imagem-sucesso" src="image 1.png" />
         </div>`;
-        //setTimeout(atualizaPagina,10000);
+        setTimeout(atualizaPagina,10000);
     }
 }
 
@@ -178,8 +178,6 @@ function pedidosRecebidos(res){
     renderizarPedidos()
 }
 
-console.log(pedidos)
-
 function filtrarModelo(modelo){
     
     const botaoFechar = document.querySelector('.ultimos-pedidos');
@@ -203,7 +201,7 @@ function renderizarSelecionado(selecionado){
         let pedido = selecionado[i];
 
         ultimoPedido.innerHTML += `
-            <li class="lista" onclick = "alertCompra()">
+            <li class="lista" onclick = "alertCompra('${pedidos[i].model}','${pedidos[i].neck}','${pedidos[i].material}','${pedidos[i].image}','${pedidos[i].owner}','${pedidos[i].author}')">
                 <div>
                     <img class="imagem-pedidos" src="${pedido.image}" />
                 </div>
@@ -220,22 +218,8 @@ function alertCompra(model,neck,material,image,owner,author){
     const compra = confirm('Deseja comprar essa blusa?');
 
     if(compra == true){
-
-        /*const model = pedidos.data.model;
-        const neck = pedidos.data.neck;
-        const material = pedidos.data.model;
-        const image = pedidos.data.image;
-        const owner = pedidos.data.owner;*/
-
-        //console.log(pedidos[1])
-        //console.log(model)
-        //console.log(material)
-        //console.log(image) 
-        //console.log(owner)
-
+        alert('Confirmado');
         console.log(pedidos)
-
-        //const objeto = pedidos[0];
 
         const objeto = {
             "model": model,
@@ -256,10 +240,8 @@ function alertCompra(model,neck,material,image,owner,author){
 
 function filtrarTodosModelos(){
 
-    let botaoFechar = document.querySelector('.ultimos-pedidos .fecharpedido');
-    botaoFechar.classList.remove('.fecharpedido');
-    document.querySelector('.ftodos').classList.add('.fecharpedido');
-    
+    const botaoFechar = document.querySelector('.ultimos-pedidos');
+    botaoFechar.classList.add('fecharpedido');
 
     const categoria = pedidos.filter((ts)=> {
         return  ts.model;
@@ -279,7 +261,7 @@ function renderizarTodos(categoria){
         let pedido = categoria[i];
 
         ultimoPedido.innerHTML += `
-            <li onclick = "alertCompra()">
+            <li class="lista" onclick = "alertCompra('${pedidos[i].model}','${pedidos[i].neck}','${pedidos[i].material}','${pedidos[i].image}','${pedidos[i].owner}','${pedidos[i].author}')">
                 <div>
                     <img class="imagem-pedidos" src="${pedido.image}" />
                 </div>

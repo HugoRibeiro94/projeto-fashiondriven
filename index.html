@@ -97,6 +97,7 @@
                 <p>Algodão</p>
                 <p>Poliéster</p>
             </div>
+            
             <div class="titulo">
                 <p>Imagem de referência</p>
             </div>
@@ -121,17 +122,19 @@
 
         <div class="filtros">
 
-            <input class="ultimos-pedidos ftodos" type="button" value="Todos os pedidos" onclick="filtrarTodosModelos()"></input>
+            <button class="ultimos-pedidos" onclick="filtrarTodosModelos()">
+                Todos os pedidos
+            </button>
 
-            <button class="ultimos-pedidos ftshirt" onclick="filtrarModelo('t-shirt')">
+            <button class="ultimos-pedidos" onclick="filtrarModelo('t-shirt')">
                 T-shirt
             </button>
 
-            <button class = "ultimos-pedidos ftop" onclick="filtrarModelo('top-tank','ftop')">
+            <button class = "ultimos-pedidos" onclick="filtrarModelo('top-tank')">
                 Camiseta
             </button>
 
-            <button class = "ultimos-pedidos flong" onclick="filtrarModelo('long','flong')">
+            <button class = "ultimos-pedidos" onclick="filtrarModelo('long')">
                 Manga Longa
             </button>
 
